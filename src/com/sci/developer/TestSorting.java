@@ -1,4 +1,4 @@
-package com.sci.mkyong;
+package com.sci.developer;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -13,9 +13,10 @@ public class TestSorting {
 		List<Developer> listDevs = getDevelopers();
 
 		System.out.println("Before Sort");
-		for (Developer developer : listDevs) {
+		/*for (Developer developer : listDevs) {
 			System.out.println(developer);
-		}
+		}*/
+		listDevs.forEach((p)->System.out.println(p));
 		
 		//sort by age
 		Collections.sort(listDevs, new Comparator<Developer>() {
@@ -24,8 +25,12 @@ public class TestSorting {
 				return o1.getEdad() - o2.getEdad();
 			}
 		});
-	
-		
+
+		System.out.println("After Sort Sueldo");
+		listDevs.stream()
+				.sorted((p, p2) -> (p2.getSueldo().compareTo(p.getSueldo())))
+				.forEach((p)->System.out.println(p));
+
 		/*
 		 * When the sorting requirement is changed, you just pass in another new anonymous Comparator class :
 		 * //sort by name	
@@ -50,9 +55,7 @@ public class TestSorting {
 		*/
 	
 		System.out.println("After Sort");
-		for (Developer developer : listDevs) {
-			System.out.println(developer);
-		}
+		listDevs.forEach((p)->System.out.println(p));
 		
 	}
 
@@ -60,7 +63,7 @@ public class TestSorting {
 
 		List<Developer> result = new ArrayList<Developer>();
 
-		result.add(new Developer("com/sci/mkyong", new BigDecimal("70000"), 33));
+		result.add(new Developer("pedro", new BigDecimal("70000"), 33));
 		result.add(new Developer("alvin", new BigDecimal("80000"), 20));
 		result.add(new Developer("jason", new BigDecimal("100000"), 10));
 		result.add(new Developer("iris", new BigDecimal("170000"), 55));

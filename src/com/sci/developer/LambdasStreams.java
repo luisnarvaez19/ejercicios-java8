@@ -48,8 +48,6 @@ public class LambdasStreams {
 	        };
 	 
 	        List<Person> phpProgrammers = new ArrayList<Person>() {
-	         
-
 				{
 	                add(new Person("Jarrod", "Pace", "PHP programmer", "male", 34, 1550));
 	                add(new Person("Clarette", "Cicely", "PHP programmer", "female", 23, 1200));

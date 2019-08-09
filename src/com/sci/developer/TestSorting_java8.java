@@ -1,4 +1,4 @@
-package com.sci.mkyong;
+package com.sci.developer;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -45,7 +45,7 @@ public class TestSorting_java8 {
 
 		List<Developer> result = new ArrayList<Developer>();
 
-		result.add(new Developer("com/sci/mkyong", new BigDecimal("70000"), 33));
+		result.add(new Developer("pedro", new BigDecimal("70000"), 33));
 		result.add(new Developer("alvin", new BigDecimal("80000"), 20));
 		result.add(new Developer("jason", new BigDecimal("100000"), 10));
 		result.add(new Developer("iris", new BigDecimal("170000"), 55));

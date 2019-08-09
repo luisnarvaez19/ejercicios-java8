@@ -7,8 +7,8 @@ public class Lambdas {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println("Resultado:"+valor(7));
-		
+		System.out.println("Resultado ----------------------------------------->:   "+valor(5));
+		System.out.println("Words in the string " + valor2("Functional interface in Java"));
 		String[] atp = {"Rafael Nadal", "Novak Djokovic", "Stanislas Wawrinka", "David Ferrer", "Roger Federer", "Andy Murray", "Tomas Berdych", "Juan Martin Del Potro"};
 		List<String> players =  Arrays.asList(atp);
 		       
@@ -54,8 +54,37 @@ public class Lambdas {
 		
 	}
 
-	public static Integer valor(Integer par) {
-		IMyFunc valor=(x)-> 2*x;
+	/**
+	 * IMyFunc:  Es una interfase funcional
+	 * @param par
+	 * @return
+	 */
+	public static int valor(Integer par) {
+
+		IMyFunc valor = (num) -> {
+			int fact = 1;
+			for (int i = 1; i <= num; i++) {
+				fact = i * fact;
+			}
+			return fact;
+		};
 		return valor.getValue(par);
 	}
+
+	public static int valor2(String par) {
+
+		IMyFunc2<String, Integer> countWords = (str) -> {
+			int c = 0;
+			char ch[]= new char[str.length()];
+			for(int i = 0; i < str.length(); i++){
+				ch[i] = str.charAt(i);
+				if(((i > 0) && (ch[i] != ' ') && (ch[i-1] == ' ')) ||
+						((ch[0] != ' ') && (i == 0)))
+					c++;
+			}
+			return c;
+		};
+		return countWords.func(par);
+	}
+
 }
